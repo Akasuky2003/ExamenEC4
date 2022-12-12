@@ -1,11 +1,9 @@
 from django.db import models
-from django.db.models.fields import CharField,URLField,DateTimeField
-from django.db.models.fields.files import ImageField
-from django.utils import timezone
+import datetime
 
 class Services(models.Model):
-    title= CharField(max_length=100)
-    description= CharField(max_length=250)
-    image= ImageField(upload_to='blog/images')
-    url= URLField(blank=True)
-    timestamp = DateTimeField(default=timezone.now)
+    title= models.CharField(max_length=100)
+    description= models.CharField(max_length=250)
+    image= models.ImageField(upload_to='index/images')
+    url= models.URLField(blank=True)
+    timestamp = models.DateTimeField(datetime.datetime.today)

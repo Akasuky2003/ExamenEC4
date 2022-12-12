@@ -1,5 +1,6 @@
 {% include 'navbar.html' %}
 {% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
   {% block head %}
@@ -19,6 +20,9 @@
 
              <div class="col-md-4">
                 {% for servicios in servicio %}
+                
+                
+                <h3>{{servicios.timestamp}}</h3>
                 <div><img src="{{servicios.image.url}}" class="services_img"></div>
                 <div class="btn_main"><a href="#">{{servicios.title}}</a></div>
                 {% endfor %}
